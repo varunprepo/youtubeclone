@@ -8,7 +8,7 @@ import ShowVideoGrid from "../../Components/ShowVideoGrid/ShowVideoGrid";
 // import "./Search.css";
 function Search() {
     const {searchQuery}=useParams();
-    console.log(searchQuery==="")
+    //console.log(searchQuery==="")
     const vids = useSelector((state) =>      
      (state.videoReducer)
     ?.data?.filter((q) => q?.videoTitle.toUpperCase()?.includes(searchQuery?.toUpperCase()))

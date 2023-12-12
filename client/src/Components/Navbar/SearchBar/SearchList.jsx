@@ -2,7 +2,7 @@ import React from 'react'
 import { FaSearch } from 'react-icons/fa';
 import  './SearchList.css'
 function SearchList({TitleArray,setSearchQuery}) {
-  console.log(TitleArray)
+  //console.log(TitleArray)
   return (
     <>
     

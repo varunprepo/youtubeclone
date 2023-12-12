@@ -16,9 +16,9 @@ function Auth({ User, setAuthBtn, setEditCreateChanelBtn }) {
   //   };
   // }, []);
   //dontenv.config()
-  // console.log(dontenv.config())
-  const CLIENT_ID = process.env.CLIENT_ID 
-  //const CLIENT_ID =  "1035133130777-16rvf7hc5btdje5j1hn1lidldq9gbe79.apps.googleusercontent.com"  
+  // console.log(dontenv.config()) process.env.CLIENT_ID 
+  const CLIENT_ID = "1035133130777-16rvf7hc5btdje5j1hn1lidldq9gbe79.apps.googleusercontent.com"
+   
   const dispatch = useDispatch();
   const onLogOutSuccess = () => {
     dispatch(setCurrentUser(null));

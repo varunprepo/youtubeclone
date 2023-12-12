@@ -5,7 +5,7 @@ import WHL from '../../Components/WHL/WHL';
 function WatchLater() {
 
   const watchLaterList= useSelector(state=>state.watchLaterReducer)
-  console.log(watchLaterList)
+  //console.log(watchLaterList)
 
   // const WatchLater = [
   //   {

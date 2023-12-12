@@ -33,8 +33,8 @@ function Navbar({ toggleDrawer,setEditCreateChanelBtn }) {
   //   },
   // };
   //console.log(dontenv.config()) //{path : '/.env'}
-  // console.log(CurrentUser)
-  const CLIENT_ID = process.env.CLIENT_ID //  "1035133130777-16rvf7hc5btdje5j1hn1lidldq9gbe79.apps.googleusercontent.com"
+  // console.log(CurrentUser) process.env.CLIENT_ID //  "
+  const CLIENT_ID = "1035133130777-16rvf7hc5btdje5j1hn1lidldq9gbe79.apps.googleusercontent.com"
   useEffect(() => {
     function start() {
       gapi.client.init({
@@ -52,7 +52,7 @@ function Navbar({ toggleDrawer,setEditCreateChanelBtn }) {
   // }
   const onSuccess = (response) => {
     const Email = response?.profileObj.email;
-    console.log(Email);
+    //console.log(Email);
     dispatch(login({ email: Email }));
   };
 
