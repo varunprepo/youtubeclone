@@ -1,16 +1,28 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { GoogleLogout } from "react-google-login";
 import { BiLogOut } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setCurrentUser } from "../../actions/currentUser";
 import "./Auth.css";
+// import dontenv from "dotenv";
+//import process from "process"
+
 function Auth({ User, setAuthBtn, setEditCreateChanelBtn }) {
 
+  // useEffect(() => {
+  //   window.process = {
+  //      ...window.process
+  //   };
+  // }, []);
+  //dontenv.config()
+  // console.log(dontenv.config())
+  const CLIENT_ID = process.env.CLIENT_ID 
+  //const CLIENT_ID =  "1035133130777-16rvf7hc5btdje5j1hn1lidldq9gbe79.apps.googleusercontent.com"  
   const dispatch = useDispatch();
   const onLogOutSuccess = () => {
     dispatch(setCurrentUser(null));
-    alert("Log Out SuccessFully");
+    alert("Log Out SuccessFully"); 
   };
   
   return (
@@ -51,7 +63,7 @@ function Auth({ User, setAuthBtn, setEditCreateChanelBtn }) {
           <div>
             <GoogleLogout
               clientId={
-                "1035133130777-16rvf7hc5btdje5j1hn1lidldq9gbe79.apps.googleusercontent.com"
+                CLIENT_ID
               }
               onLogoutSuccess={onLogOutSuccess}
               render={(renderProps) => (

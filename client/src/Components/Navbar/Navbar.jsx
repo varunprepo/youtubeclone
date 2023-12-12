@@ -12,11 +12,19 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../actions/auth";
 import Auth from "../../Pages/Auth/Auth";
+//import dontenv from "dotenv"
+//import process from "process"
 function Navbar({ toggleDrawer,setEditCreateChanelBtn }) {
 
+  // useEffect(() => {
+  //   window.process = {
+  //      ...window.process
+  //   };
+  // }, []);
   const [AuthBtn, setAuthBtn] = useState(false)
   const CurrentUser=useSelector(state=>state.currentUserReducer)
-
+  // console.log(dontenv.config())
+  // dontenv.config()
   // const CurrentUser = null;
   //   const CurrentUser = {
   //   result: {
@@ -24,12 +32,14 @@ function Navbar({ toggleDrawer,setEditCreateChanelBtn }) {
   //     joinedOn: "2222-07-15T09:57:23.489Z",
   //   },
   // };
-  console.log(CurrentUser)
+  //console.log(dontenv.config()) //{path : '/.env'}
+  // console.log(CurrentUser)
+  const CLIENT_ID = process.env.CLIENT_ID //  "1035133130777-16rvf7hc5btdje5j1hn1lidldq9gbe79.apps.googleusercontent.com"
   useEffect(() => {
     function start() {
       gapi.client.init({
         clientId:
-          "1035133130777-16rvf7hc5btdje5j1hn1lidldq9gbe79.apps.googleusercontent.com",
+        CLIENT_ID,
         scope: "email",
       });
     }
@@ -96,7 +106,7 @@ function Navbar({ toggleDrawer,setEditCreateChanelBtn }) {
           {/* http://console.cloud.google.com */}
             <GoogleLogin
               clientId={
-                "1035133130777-16rvf7hc5btdje5j1hn1lidldq9gbe79.apps.googleusercontent.com"
+                CLIENT_ID
               }
               onSuccess={onSuccess}
               onFailure={onFailure}
